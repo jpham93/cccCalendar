@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path')
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 var mongoose = require('mongoose')
@@ -22,7 +23,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use('/api/events', eventRoute);
-
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/calendar.html'));
+  //__dirname : It will resolve to your project folder.
+});
 app.use((req, res) => {
   res.status(404);
   res.send('error 404');
@@ -33,6 +37,13 @@ app.use((err, req, res, next) => {
   console.log(`ERROR: ${err}`);
   res.send(`ERROR 500: ${err}`);
 });
+
+
+app.use(express.static(__dirname + '/View'));
+
+app.get('/', (req, res, next) => {
+  res.render("calendar.html")
+})
 
 app.listen(port, () => {
   console.log(`Express server started on ${port}`);
