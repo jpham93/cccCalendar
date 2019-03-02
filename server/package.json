@@ -1,0 +1,22 @@
+{
+  "name": "ccc_calendar",
+  "version": "1.0.0",
+  "description": "central calendar for ccc hackathon",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domphan/cccCalendar.git"
+  },
+  "keywords": [
+    "civic"
+  ],
+  "author": "Dominic Phan, Lateefah Camacho, James Pham, Victoria Le",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/domphan/cccCalendar/issues"
+  },
+  "homepage": "https://github.com/domphan/cccCalendar#readme"
+}
